@@ -1,0 +1,46 @@
+#N canvas 175 25 574 611 12;
+#X obj 2 3 cnv 15 301 42 empty empty input-panel~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 135 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Audio_Input_Selection_Panel 0 28
+2 18 -233017 -1 0;
+#X obj 2 577 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 538 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 494 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 502 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 95 542 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 115 502 signal -;
+#X obj 193 243 input-panel~;
+#X text 27 155 Additionally a toggleable visualiser is integrated (for
+interest and debugging purposes) as well as the ability to STOP the
+audio input as well as RESTART (using the most recently selected option
+prior to stopping), f 74;
+#X obj 193 381 output~;
+#X text 28 270 use device microphone ->, f 25;
+#X text 7 459 WARNING: WEAR HEADPHONES WHEN USING LIVE RECORD TO AVOID
+FEEDBACK!, f 67;
+#X text 35 301 select an audio file ->, f 25;
+#X text 35 331 use sample audo file ->;
+#X text 448 274 <- toggle visualiser, f 17;
+#X text 182 501 the audio signal from the selected input source, f
+52;
+#X text 28 85 The [input-panel~] abstraction provides an interface
+for selecting an audio input source that can be fed into other abstractions.
+It provides three options: LIVE RECORD (using device microphone) \,
+LOAD FILE (load a compatible audio file from your device) and LOAD
+SAMPLE (load the provided sample audio file for quick starts)., f
+74;
+#X connect 11 0 13 0;
+#X connect 11 0 13 1;

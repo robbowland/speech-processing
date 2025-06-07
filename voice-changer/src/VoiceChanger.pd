@@ -1,0 +1,8 @@
+#N canvas 22 71 1039 767 12;
+#X obj 31 13 voice-changer~;
+#X obj 30 692 output~;
+#X obj 822 679 voice-changer~-help;
+#X text 727 679 SEE FOR HELP:;
+#X obj 822 702 voice-changer~-guide-help;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;

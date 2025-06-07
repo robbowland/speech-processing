@@ -1,0 +1,90 @@
+#N canvas 78 33 614 830 12;
+#X obj 2 3 cnv 15 301 42 empty empty FX-patch-panel~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 300 40 empty empty RobBowland 180 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 302 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 16 40 cnv 4 4 4 empty empty Audio_Effects_Signal_Patch_Panel
+0 28 2 18 -233017 -1 0;
+#X obj 2 791 cnv 15 600 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 752 cnv 3 600 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 551 cnv 3 600 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 693 cnv 3 600 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 561 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 639 cnv 17 3 40 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 665 cnv 17 3 17 empty empty 8 5 9 0 16 -228856 -162280 0
+;
+#X text 95 755 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 128 560 list -;
+#X text 121 573 (float);
+#X text 115 638 signal -;
+#X obj 85 703 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 727 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 114 702 signal -;
+#X obj 331 281 FX-patch-panel~;
+#X text 37 271 0 -> 1 -> 2 -> 3;
+#X text 37 285 0 -> 4;
+#X text 37 299 0 -> 5;
+#X text 37 313 0 -> 6;
+#X text 37 327 0 -> 7;
+#X msg 153 270 0 0 1 2 0 0 0 0;
+#X text 24 81 The [FX-patch-panel~] abstraction is a variation of the
+[patch-panel~] abstraction. It is specifically intended for use with
+the [FX-board~] abstraction as a way to provide an interface for sequencing
+audio effects., f 86;
+#X text 23 212 So \, reading from row to column \, a selection of (2
+\, 3) would mean FX- module 3 is recieving the output of FX- module
+2 as its input signal., f 86;
+#X text 34 343 This means \, module 1 will take signal 0 as input.
+Module 2 will then take the output of module 1 as input and module
+3 will take the output of module 2 as input. All other modules take
+signal 0 as input., f 41;
+#X text 22 249 EXAMPLE:;
+#X text 23 445 RULES:;
+#X text 31 478 - Select anything marked by a red X, f 36;
+#X text 31 494 - Create a selection pattern that is symmetrical across
+the red X axis (ignoring row 0), f 39;
+#X msg 469 257 0 0 0 0 0 0 0 0;
+#X text 430 257 RESET;
+#X text 31 462 To avoid impossible sequence DO NOT;
+#X text 183 561 list of 8 floats representing the positions of the
+7 patch panel columns \, the first list element is ignored to allow
+for 'silent' activations of pack, f 59;
+#X obj 85 607 cnv 17 3 25 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 115 607 signal -;
+#X text 184 606 the base audio signal to which the effects will be
+applied \, corresponds to row 0 on the patch panel;
+#X text 183 702 the audio signals output by each of the 7 patch panel
+columns \, intended to be attached to the inlets of the FX- modules
+providing signals 1-8 (in the same order), f 61;
+#X text 184 637 the audio signals that will correspond to row 1-7 in
+the patch panel \, these are intended to be the outputs of FX - modules
+(should be sent via send and recieve blocks to avoid DSP loop error)
+;
+#X text 332 487 (See the implementation of [FX-board~] for an example
+how how it is intended to be used), f 37;
+#X text 22 124 The intention is for this panel to be used with several
+FX- modules (e.g. [FX-delay~]) with each module providing its output
+as an input to this panel and each module recieving an output from
+this panel as its input - allowing for the creation of sequences.,
+f 87;
+#X text 22 180 Each FX- module will correspond to a number (1-7) as
+labelled on the panel. Each row specifies the input for each column.
+Number 0 represents the base audio signal., f 87;
+#X connect 25 0 19 0;
+#X connect 33 0 19 0;

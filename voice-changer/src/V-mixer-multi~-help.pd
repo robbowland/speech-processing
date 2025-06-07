@@ -1,0 +1,95 @@
+#N canvas 54 25 627 847 12;
+#X obj 2 3 cnv 15 301 42 empty empty V-mixer-multi~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 320 40 empty empty RobBowland 200 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 321 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Sequential_Audio_Signal_Mixer_(Vertical)
+0 28 2 18 -233017 -1 0;
+#X obj 2 807 cnv 15 610 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 768 cnv 3 610 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 540 cnv 3 610 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 664 cnv 3 610 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 550 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 594 cnv 17 3 40 empty empty 7 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 571 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 95 772 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 128 640 bang -;
+#X obj 27 196 V-mixer-multi~;
+#X obj 508 51 V-mixer~-help;
+#X text 25 80 The [V-mixer-mulit~] abstraction is an extension of the
+[V-mixer~] abstraction to allow for sequential mixing of signals.,
+f 90;
+#X obj 27 175 osc~ 1500;
+#X obj 97 175 osc~ 1000;
+#X obj 167 175 osc~ 750;
+#X obj 230 175 osc~ 500;
+#X obj 294 175 osc~ 500;
+#X obj 358 175 osc~ 250;
+#X obj 422 175 osc~ 150;
+#X obj 514 491 output~;
+#X obj 495 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 26 108 The mixed signal output of each mixer becomes the input
+signal (sig1) for the next mixer along. The first mixer takes 2 signals.
+, f 89;
+#X text 114 551 signal -;
+#X text 183 550 the input signals for the mixers;
+#X text 128 591 list -;
+#X text 121 604 (float);
+#X text 183 592 list of 7 floats representing the positions of the
+6 mixer sliders \, the first list element is ignored to allow for 'silent'
+activations of pack, f 60;
+#X obj 85 640 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 181 640 reset slider values to creation argument values;
+#X obj 85 677 cnv 17 3 35 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 698 cnv 17 3 17 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 114 678 signal -;
+#X text 183 677 the mixed signal outputs of each mixer;
+#X obj 85 720 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 128 719 list -;
+#X text 121 732 (float);
+#X text 183 720 list of 7 floats representing the positions of the
+6 mixer sliders \, the first list element is ignored to allow for 'silent'
+activations of pack;
+#X text 71 146 MIXER 1;
+#X text 46 160 sig1;
+#X text 111 160 sig2;
+#X text 171 146 MIXER 2;
+#X text 232 146 MIXER 3;
+#X text 295 146 MIXER 4;
+#X text 360 146 MIXER 5;
+#X text 425 146 MIXER 6;
+#X text 180 160 sig2;
+#X text 241 160 sig2;
+#X text 309 160 sig2;
+#X text 370 160 sig2;
+#X text 432 160 sig2;
+#X text 516 175 RESET;
+#X connect 14 5 24 0;
+#X connect 14 5 24 1;
+#X connect 17 0 14 0;
+#X connect 18 0 14 1;
+#X connect 19 0 14 2;
+#X connect 20 0 14 3;
+#X connect 21 0 14 4;
+#X connect 22 0 14 5;
+#X connect 23 0 14 6;
+#X connect 25 0 14 8;

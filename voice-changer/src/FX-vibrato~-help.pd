@@ -1,0 +1,74 @@
+#N canvas 658 78 563 794 12;
+#X obj 2 3 cnv 15 301 42 empty empty FX-vibrato~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 135 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Vibrato_&_Frequency_Shift_Audio_Effect
+0 28 2 18 -233017 -1 0;
+#X obj 2 766 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 727 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 568 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 675 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 578 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 602 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 683 cnv 17 3 27 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 95 731 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 115 683 signal -;
+#X text 423 246 when off[ ] the outgoing signal is blocked, f 19;
+#X text 402 230 <- toggle on[X]/off[ ];
+#X text 115 578 signal -;
+#X text 180 578 the audio signal that the effect will be applied to
+;
+#X text 115 602 signal -;
+#X text 181 601 optional FEEDBACK signal \, for the best effect this
+should be the audio signal that is the result of applying this effect
+to a signal, f 51;
+#X text 285 171 generate a SINE or SQUARE wave from the [LFO~], f
+26;
+#X text 285 198 |v, f 1;
+#X obj 189 380 output~;
+#X obj 189 191 osc~ 200;
+#X obj 189 227 FX-vibrato~;
+#X text 29 79 The [FX-vibrato~] anstraction provides an interface for
+applying a VIBRATO and/ or FREQUENCY SHIFT effect to incoming audio
+signals through the use of an underlying [LFO~] and frequency adjuster
+\, with an additional option to apply a FEEDBACK signal., f 77;
+#X text 28 136 Controls are provided to modify the underlying [LFO~]
+and shift the incoming signal frequency., f 76;
+#X text 65 264 SHIFT FREQUENCY ->;
+#X text 20 493 [ (INCOMING-SIGNAL-FREQUENCY + SHIFT-FREQUENCY) + OSC-AMPLITUDE
+] and [ (INCOMING-SIGNAL-FREQUENCY + SHIFT-FREQUENCY) - OSC-AMPLITUDE
+], f 69;
+#X text 22 437 The FREQUENCY SHIFT slider establishes a baseline frequency
+shift that will be applied to the incoming signal. The OSC-FREQUENCY
+and OSC-AMPLITUDE are used to control the VIBRATO effect applied. The
+VIBRATO effect is achieved by varying the the signal frequency between:
+, f 78;
+#X text 181 684 the input audio signal after frequency shift and/ or
+vibrato application, f 52;
+#X text 21 524 The frequency at which this variation occurs is given
+by the OSC-FREQUENCY and will follow a SINE or SQUARE waveform., f
+76;
+#X text 31 300 LFO signal FREQUENCY ->;
+#X text 11 334 FFRQUENCY change amount ->;
+#X obj 85 648 cnv 17 3 17 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 128 648 bang -;
+#X text 180 648 external reset trigger, f 53;
+#X connect 23 0 24 0;
+#X connect 24 0 22 0;
+#X connect 24 0 22 1;

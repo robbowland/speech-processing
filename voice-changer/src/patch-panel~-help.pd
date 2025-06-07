@@ -1,0 +1,89 @@
+#N canvas 35 28 562 804 12;
+#X obj 2 3 cnv 15 301 42 empty empty patch-panel~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 135 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 16 40 cnv 4 4 4 empty empty Signal_Patch_Panel 0 28 2 18 -233017
+-1 0;
+#X obj 2 777 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 738 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 503 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 619 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 513 cnv 17 3 45 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 563 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 587 cnv 17 3 17 empty empty 8 5 9 0 16 -228856 -162280 0
+;
+#X text 95 742 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 24 82 The [patch-panel~] abstraction provides an interface
+for on-the-fly routing of audio signals to different outlets (including
+one-to-many routings)., f 78;
+#X obj 167 229 patch-panel~;
+#X obj 158 201 osc~ 1000;
+#X obj 228 201 osc~ 500;
+#X obj 167 411 output~;
+#X obj 293 201 osc~ 250;
+#X obj 359 201 osc~ 150;
+#X text 162 184 SIGNAL 0;
+#X text 230 184 SIGNAL 1;
+#X text 295 184 SIGNAL 2;
+#X text 363 184 SIGNAL 3;
+#X text 187 235 SIGNAL 0;
+#X text 187 256 SIGNAL 1;
+#X text 187 276 SIGNAL 2;
+#X text 187 296 SIGNAL 3;
+#X text 180 316 NO SIGNAL;
+#X text 180 336 NO SIGNAL;
+#X text 180 356 NO SIGNAL;
+#X text 180 376 NO SIGNAL;
+#X text 23 236 This area is blank in the actual abstraction so you
+can add your own labels, f 20;
+#X text 149 235 ->;
+#X text 86 389 OUTLET 0 ->;
+#X text 279 408 [ Click through the first column to get a feel for
+how it works (only the first column is wired up here but the others
+behave the same way but route to the other outles) ], f 39;
+#X text 23 114 It consists of 6 columns (one for each of its signal
+outlets) each with 8 rows (one for each of its signal inlets). Selecting
+a row on a column will route the audio signal corresponding to that
+row \, to the outlet corresonding to that column., f 78;
+#X text 128 512 list -;
+#X text 121 525 (float);
+#X text 183 513 list of 7 floats representing the positions of the
+6 patch panel columns \, the first list element is ignored to allow
+for 'silent' activations of pack, f 52;
+#X text 114 562 signal -;
+#X text 183 563 the audio signals that will correspond to each of the
+8 rows in the patch panel columns, f 52;
+#X obj 85 677 cnv 17 3 45 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 128 676 list -;
+#X text 121 689 (float);
+#X text 183 677 list of 7 floats representing the positions of the
+6 patch panel columns \, the first list element is ignored to allow
+for 'silent' activations of pack, f 52;
+#X obj 85 630 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 654 cnv 17 3 17 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 114 629 signal -;
+#X text 183 630 the audio signals output by each of the 6 patch panel
+columns, f 52;
+#X connect 14 0 17 0;
+#X connect 14 0 17 1;
+#X connect 15 0 14 1;
+#X connect 16 0 14 2;
+#X connect 18 0 14 3;
+#X connect 19 0 14 4;

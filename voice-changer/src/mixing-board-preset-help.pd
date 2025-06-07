@@ -1,0 +1,74 @@
+#N canvas 0 25 564 778 12;
+#X obj 2 3 cnv 15 340 42 empty empty mixing-board-preset 20 20 2 37
+-233017 -1 0;
+#X obj 343 4 cnv 15 220 40 empty empty RobBowland 100 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 340 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 220 42 2 100 100;
+#X restore 342 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Mixing_Board_Preset_Save_&_Loader
+0 28 2 18 -233017 -1 0;
+#X obj 2 737 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 688 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 388 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 504 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 2 643 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X text 98 650 1) float;
+#X text 98 666 2) float, f 9;
+#X obj 85 398 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 453 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 95 692 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 160 650 - starting value for SPEED slider (default: 0), f
+53;
+#X text 160 666 - starting value for DEPTH slider (default: 0), f
+53;
+#X obj 93 252 mixing-board-preset;
+#X text 32 83 The [mixing-board-preset] is a specific subcomponent/module
+of the [mixing-board~] abstraction. It provides a mechanism by which
+the current configuration of the [mixing-board~] can be stored and
+re-activated at a later point in time., f 79;
+#X text 33 142 Stored presets can be edited in storage via the display
+\, which shows the currently stored values., f 79;
+#X text 298 261 <-------- stored patch panel positions;
+#X text 345 283 <-- stored mixer slider values;
+#X text 159 334 save/store current board configuartation, f 25;
+#X text 161 305 ^|, f 1;
+#X text 160 193 activate/set the board to the stored configuration
+, f 29;
+#X text 162 223 |v, f 1;
+#X text 121 453 list -;
+#X text 121 398 list -;
+#X text 114 411 (float);
+#X text 114 465 (float);
+#X text 183 396 list of 7 floats representing the positions of the
+6 patch panel column \, the first list element is ignored to allow
+for 'silent' activations of pack, f 52;
+#X text 183 450 list of 7 floats representing the values of the 6 mixer
+sliders \, the first list element is ignored to allow for 'silent'
+activations of pack, f 52;
+#X obj 85 525 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 580 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 121 580 list -;
+#X text 121 525 list -;
+#X text 114 538 (float);
+#X text 114 592 (float);
+#X text 183 523 list of 7 floats representing the positions of the
+6 patch panel column \, the first list element is ignored to allow
+for 'silent' activations of pack, f 52;
+#X text 183 577 list of 7 floats representing the values of the 6 mixer
+sliders \, the first list element is ignored to allow for 'silent'
+activations of pack, f 52;
+#X coords 0 0 0.125 0.125 0 0 0;

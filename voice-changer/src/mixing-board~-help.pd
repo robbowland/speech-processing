@@ -1,0 +1,82 @@
+#N canvas 37 25 1312 808 12;
+#X obj 2 3 cnv 15 301 42 empty empty mixing-board~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 1000 40 empty empty RobBowland 870 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 1000 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Audio_Mixing_Board 0 28 2 18 -233017
+-1 0;
+#X obj 2 781 cnv 15 1300 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 752 742 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0
+13 -228856 -1 0;
+#X obj 752 72 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 752 198 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj 752 277 cnv 3 550 3 empty \$0-pddp.cnv.argument see_also 8 12
+0 13 -228856 -1 0;
+#X obj 835 82 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 128 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 153 cnv 17 3 17 empty empty 7 5 9 0 16 -228856 -162280 0
+;
+#X text 845 746 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X obj 145 230 mixing-board~;
+#X obj 748 46 cnv 3 3 750 empty \$0-pddp.cnv.inlets interfaces 8 12
+0 13 -228856 -1 0;
+#X text 27 168 The initial 'base' signal provided serves as 'sig1'
+for the first mixer., f 102;
+#X text 871 82 signal -;
+#X text 940 82 the 'base' signal to which other signals will be mixed.
+serves as 'sig1' for the first mixer., f 51;
+#X text 871 128 signal -;
+#X obj 835 209 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 234 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 871 208 signal -;
+#X text 631 320 <- PATCH PANEL;
+#X text 630 518 <- MIXERS;
+#X text 940 128 the signals that will serve as the options for the
+patch panel. each signal will correspond to one row of the patch panel
+\, where inlet 1 is the first row etc., f 51;
+#X text 940 208 the output of each mixer. allows for early 'siphoning'
+of the sequentially mixed signals for feeding into another mixing board
+or other system., f 51;
+#X text 26 112 It consists of two major components: the patch panel
+and the mixers. The patch panel allows for dynamic reconfiguration
+of the signal mixing order. Each Vradio column represents one of the
+mixers \, with each row corresponding to one of the audio inlets. Each
+mixers mixed output signal becomes the 'sig1' of the next mixer \,
+with 'sig2' corresponding to the selected audio channel on the patch
+pannel., f 102;
+#X obj 802 366 mixing-board-preset;
+#X obj 804 492 patch-panel~;
+#X obj 1089 367 V-mixer~;
+#X text 28 186 Additionally \, it provides functionally for saving
+and then activating up to two presets., f 91;
+#X text 1171 377 ([V-mixer-multi~] is used in this abstraction but
+it's too big to fit in here), f 17;
+#X text 73 304 PRESETS ->;
+#X text 26 83 The [mixing-board~] abstraction provides an interface
+for sequentially mixing audio signals \, with functionality for dynamic
+reconfiguration., f 102;
+#X text 19 231 reset everything (except presets) to 0, f 16;
+#X text 127 230 ->;
+#X text 855 344 [mixing-board-preset];
+#X text 874 469 [patch-panel~];
+#X text 1090 347 [V-mixer~];
+#X text 645 336 (control which signals are routed to which mixer),
+f 13;
+#X text 645 532 (control proportions of signals), f 12;
+#X obj 803 428 mixing-board-preset-help;
+#X obj 804 668 patch-panel~-help;
+#X obj 1090 697 V-mixer-multi~-help;

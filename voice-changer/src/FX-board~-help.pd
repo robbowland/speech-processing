@@ -1,0 +1,108 @@
+#N canvas 103 37 1309 847 12;
+#X obj 2 3 cnv 15 301 42 empty empty FX-board~ 20 20 2 37 -233017 -1
+0;
+#X obj 305 4 cnv 15 1000 40 empty empty RobBowland 880 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 1001 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 36 cnv 4 4 4 empty empty Audio_Effects_Creation_Board 0 28
+2 18 -233017 -1 0;
+#X obj 2 817 cnv 15 1300 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 752 777 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0
+13 -228856 -1 0;
+#X obj 752 72 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 752 196 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj 752 268 cnv 3 550 3 empty \$0-pddp.cnv.argument see_also 8 12
+0 13 -228856 -1 0;
+#X obj 835 82 cnv 17 3 30 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 128 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 162 cnv 17 3 17 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 845 781 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X obj 748 46 cnv 3 3 770 empty \$0-pddp.cnv.inlets interfaces 8 12
+0 13 -228856 -1 0;
+#X text 871 82 signal -;
+#X text 871 127 signal -;
+#X obj 835 207 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 835 232 cnv 17 3 17 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 871 206 signal -;
+#X obj 126 219 FX-board~;
+#X text 25 75 The [FX-board~] abstraction provides an interface for
+designing audio effects by means of redirecting the outputs of different
+FX modules into the inputs of other modules \, thereby creating new
+effects., f 106;
+#X text 25 104 This is achieved through the use of a the built in [FX-patch-panel~]
+abstraction. This allows for real-time resequencing of effects \, see
+the [FX-patch-panel~] help file for more information., f 106;
+#X text 25 135 It provides functionality for applying the following
+effects: Low-Pass \, High-Pass & Band-Pass Filters \, Delay \, Flanging
+\, Tremolo \, Ring-Modulation and Vibrato & Frequency Shifting. More
+information about each of these FX- modules can be found in their help
+files., f 106;
+#X obj 56 201 osc~ 500;
+#X obj 31 756 output~;
+#X obj 132 756 output~;
+#X obj 231 756 output~;
+#X obj 329 756 output~;
+#X obj 426 756 output~;
+#X obj 522 756 output~;
+#X obj 621 756 output~;
+#X text 32 796 HIGH/LOW-PASS;
+#X text 144 795 BAND-PASS;
+#X text 255 796 DELAY;
+#X text 344 796 FLANGER;
+#X text 421 796 VIBRATO/F-SHIFT;
+#X text 542 796 TREMOLO;
+#X text 637 795 RINGMOD;
+#X text 587 228 <--- toggle signal;
+#X text 46 263 sequence effects -->, f 13;
+#X text 2 731 OUTPUTS:;
+#X text 940 82 the 'base' signal which will serve as the start signal
+for all effect sequence \, denoted as INPUT., f 51;
+#X text 940 127 FEEDBACK signals for FX modules that support feedback
+signals \, in inlet order: delay \, flanger \, vibrato \, tremolo \,
+ringmod \; supplied by other abstraction e.g. [mixing-board-ex~],
+f 51;
+#X text 940 206 the output of each FX- module \, in outlet order: high/low-pass
+\, band-pass \, delay \, flanger \, vibrato \, tremolo \, ringmod.
+, f 51;
+#X obj 846 371 FX-patch-panel~;
+#X text 905 352 [FX-patch-panel~];
+#X obj 846 576 FX-patch-panel~-help;
+#X obj 893 312 mixing-board-ex~-help;
+#X obj 868 664 FX-delay~-help;
+#X obj 855 690 FX-vibrato~-help;
+#X text 336 201 FEEDBACK INLETS;
+#X obj 979 639 FX-HLPfilter~-help;
+#X obj 979 664 FX-BPfilter~-help;
+#X obj 979 690 FX-flanger~-help;
+#X obj 979 715 FX-tremolo~-help;
+#X obj 979 740 FX-ringmod~-help;
+#X text 826 608 =================| FX- MODULES |=============;
+#X connect 20 0 25 1;
+#X connect 20 0 25 0;
+#X connect 20 1 26 1;
+#X connect 20 1 26 0;
+#X connect 20 2 27 1;
+#X connect 20 2 27 0;
+#X connect 20 3 28 0;
+#X connect 20 3 28 1;
+#X connect 20 4 29 0;
+#X connect 20 4 29 1;
+#X connect 20 5 30 0;
+#X connect 20 5 30 1;
+#X connect 20 6 31 0;
+#X connect 20 6 31 1;
+#X connect 24 0 20 0;

@@ -1,0 +1,71 @@
+#N canvas 46 41 561 766 12;
+#X obj 2 3 cnv 15 301 42 empty empty V-mixer~ 20 20 2 37 -233017 -1
+0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 130 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Audio_Signal_Mixer_(Vertical) 0
+28 2 18 -233017 -1 0;
+#X obj 2 739 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 700 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 489 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 605 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 2 664 cnv 3 550 3 empty \$0-pddp.cnv.argument arguments 8 12
+0 13 -228856 -1 0;
+#X text 98 671 1) float;
+#X obj 85 499 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 522 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 613 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 635 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 567 cnv 17 3 25 empty empty 3 5 9 0 16 -228856 -162280 0
+;
+#X text 95 704 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 115 613 signal -;
+#X text 121 637 float -;
+#X text 128 566 bang -;
+#X text 31 79 The [V-mixer~] abstraction provides an interface for
+proportionally mixing two signals., f 72;
+#X obj 300 107 V-mixer~;
+#X obj 391 106 osc~ 500;
+#X obj 300 435 output~;
+#X text 454 107 SIGNAL 1;
+#X text 454 129 SIGNAL 2;
+#X obj 391 128 osc~ 150;
+#X text 30 114 Selecting '100% sig1' will send SIGNAL 1 to the output
+at 100% amplitude and SIGNAL 2 at 0% amplitude \, visa versa if '100%
+sig2' is selected., f 37;
+#X text 29 187 Selecting any inbetween values on the slider will result
+in the signals being sent as a mix \, with each ones amplitude being
+modified according to the slider value (0 = 100% sig1 \, 1 = 100% sig
+2), f 37;
+#X text 114 499 signal -;
+#X text 114 522 signal -;
+#X text 185 498 audio signal that will become sig1, f 52;
+#X text 185 523 audio signal that will become sig2, f 42;
+#X text 182 566 reset slider values to creation argument value or 0
+if none is given, f 53;
+#X obj 85 545 cnv 17 3 17 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 121 545 float -;
+#X text 184 546 value to set the slider to, f 52;
+#X text 182 612 the mixed signal, f 52;
+#X text 182 636 slider value, f 52;
+#X text 160 671 - starting value for slider (default: 0), f 53;
+#X connect 21 0 23 0;
+#X connect 21 0 23 1;
+#X connect 22 0 21 0;
+#X connect 26 0 21 1;

@@ -1,0 +1,40 @@
+#N canvas 33 73 1380 742 12;
+#X obj 31 14 voice-changer~;
+#X obj 30 692 output~;
+#X text 1017 16 ======| QUICK START |=====;
+#X text 1020 45 1 Use INPUT to select input signal.;
+#X text 1020 68 2 Use FX to create/apply desired effects.;
+#X text 1020 89 3 Mix created signals from FX using MIXING BOARD.;
+#X text 1020 109 4 Use FEEDBACK to send feedback signals back;
+#X text 1041 124 to FX modules \, creating even more effect;
+#X text 1042 139 possibilities.;
+#X text 1017 171 ======| MORE DETAILS |=====;
+#X obj 1018 200 voice-changer~-help;
+#X text 1016 237 ======| EXAMPLE |=====;
+#X text 1017 254 Try the following to get a feel for the interface:
+, f 49;
+#X text 1017 283 1 Ensure DSP is on and the output~ volume is turned
+up, f 49;
+#X text 1019 314 2 Select LOAD SAMPLE on INPUT;
+#X text 1020 375 4 Toggle on FX-vibrato~ and FX-flanger~ and change
+some of the settings., f 48;
+#X text 1021 407 5 In the MIXING BOARD \, select VIBRATO on the first
+column of the patch panel (the grid), f 46;
+#X text 1021 439 6 Put the first V-mixer~ to 100% sig2;
+#X text 1022 457 7 Toggle on the first feedback control in FEEDBACK
+(under the first V-mixer~), f 48;
+#X text 1016 627 (*) This means the FX- module 5 (VIBRATO) will recieve
+the output of FX- module 4 (FLANGER) as its input., f 49;
+#X text 1021 490 You have just designed your first effect sequence
+and output it to a mixer \, you can continue this process by desiging
+other effects and mixing them to create a wide variety of new effects!
+, f 47;
+#X text 1020 558 If you want to save any of your mixing presets hit
+SAVE on one of the slots \, you can then click ACTIVATE to reactivate
+it later. (This will only save mixer positions and mixing board patch
+panel configurations currently), f 50;
+#X text 1019 332 3 On the FX patch panel (the grid) select (4 \, 5)
+where the first element is the row number \, the second is the column
+number. (*), f 48;
+#X connect 0 0 1 0;
+#X connect 0 0 1 1;

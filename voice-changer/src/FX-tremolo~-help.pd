@@ -1,0 +1,64 @@
+#N canvas 588 65 563 661 12;
+#X obj 2 3 cnv 15 301 42 empty empty FX-tremolo~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 135 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Ring_Modulation_Audio_Effect 0 28
+2 18 -233017 -1 0;
+#X obj 2 626 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 587 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 438 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 545 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 448 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 472 cnv 17 3 40 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 553 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 95 591 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 115 553 signal -;
+#X text 405 246 when off[ ] the outgoing signal is blocked, f 19;
+#X text 384 230 <- toggle on[X]/off[ ];
+#X text 115 448 signal -;
+#X text 180 448 the audio signal that the effect will be applied to
+;
+#X text 115 472 signal -;
+#X text 181 471 optional FEEDBACK signal \, for the best effect this
+should be the audio signal that is the result of applying this effect
+to a signal, f 51;
+#X text 268 171 generate a SINE or SQUARE wave from the [LFO~], f
+26;
+#X text 268 198 |v, f 1;
+#X text 22 267 LFO signal FREQUENCY ->;
+#X text 23 303 LFO signal AMPLITUDE ->;
+#X obj 181 360 output~;
+#X obj 181 191 osc~ 200;
+#X text 29 82 The [FX-tremolo~] anstraction provides an interface for
+applying a TREMOLO effect to incoming audio signals through the use
+of an underlying [LFO~] \, with an additional option to apply a FEEDBACK
+signal., f 77;
+#X text 181 554 the input audio signal after tremolo application,
+f 52;
+#X text 20 318 (amplitude of outgoing audio), f 22;
+#X text 24 281 (effect frequency);
+#X obj 181 227 FX-tremolo~;
+#X text 27 126 Controls are provided to modify the underlying [LFO~].
+;
+#X obj 85 518 cnv 17 3 17 empty empty 2 5 9 0 16 -228856 -162280 0
+;
+#X text 128 518 bang -;
+#X text 180 518 external reset trigger, f 53;
+#X connect 25 0 30 0;
+#X connect 30 0 24 0;
+#X connect 30 0 24 1;

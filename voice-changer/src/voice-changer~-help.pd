@@ -1,0 +1,68 @@
+#N canvas 0 25 1409 847 12;
+#X obj 2 3 cnv 15 301 42 empty empty voice-changer~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 1100 40 empty empty RobBowland 970 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 1102 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 31 cnv 4 4 4 empty empty Real_Time_Voice_Changer 0 28 2 18
+-233017 -1 0;
+#X obj 2 817 cnv 15 1400 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 1092 750 cnv 3 310 3 empty \$0-pddp.cnv.more_info note 8 12
+0 13 -228856 -1 0;
+#X obj 1092 76 cnv 3 310 3 empty \$0-pddp.cnv.outlets outlets 8 12
+0 13 -228856 -1 0;
+#X obj 1092 158 cnv 3 310 3 empty \$0-pddp.cnv.argument see_also 8
+12 0 13 -228856 -1 0;
+#X text 1150 755 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 31;
+#X obj 1088 46 cnv 3 3 770 empty \$0-pddp.cnv.inlets interfaces 8 12
+0 13 -228856 -1 0;
+#X obj 1130 102 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280
+0;
+#X obj 106 157 voice-changer~;
+#X obj 1105 271 input-panel~-help;
+#X obj 9 770 output~;
+#X text 1152 102 signal -;
+#X text 1216 103 the resultant audio signal following application of
+effects and mixing, f 27;
+#X text 1105 244 ==| INPUT |==;
+#X text 1105 314 ==| FX |==;
+#X obj 1106 340 FX-board~-help;
+#X obj 1106 397 mixing-board-ex~-help;
+#X text 1101 186 Click the blocks in each section to see related help
+files \, each -help file may contain further links to subcomponents
+, f 40;
+#X text 26 69 The [voice-changer~] abstraction provides an interface
+for real-time \, dynamic control of selected audio recordings or microphone
+input. It provides funcionality for input selection \, audio effect
+creation (via sequencing) and signal mixing (with configurable order)
+- all modifiable in real time via the various provided panels. The
+abstraction is intended to be used as follows: FIRST \, select the
+signal you will be applying the effects to using the INPUT panel. SECOND
+\, design your audio effects using the FX panel to select the inputs
+of the various FX modules \, feeding outputs of modules into the inputs
+of other modules to create new effects. THIRD \, sequence and mix signals
+using the MIXING BOARD \, additionally apply the mixing signals as
+FEEDBACK to the FX modules \, providing even more effect possibilities.
+For more details on each section \, view the help files in the see_also
+section., f 158;
+#X text 1105 429 ==| FEEDBACK |==;
+#X obj 1106 449 mixing-board-output~-help;
+#X text 1105 376 ==| MIXING BOARD |==;
+#X text 1105 471 Note that FEEDBACK is a part of MIXINING BOARD.,
+f 32;
+#X text 1104 499 Feedback signals are automatically sent to the correct
+FX- module that is providing 'sig2' to a given mixer (providing the
+FX- module accpets feedback) \, synchronising with what is selected
+in the mixing board patch panel., f 40;
+#X text 1103 592 i.e. If DELAY is selected for first mixer \, the output
+of the first mixer will be sent to the DELAY FX- module as a feedback
+signal \, based on the FEDDBACK controls below it., f 40;
+#X connect 12 0 14 0;
+#X connect 12 0 14 1;

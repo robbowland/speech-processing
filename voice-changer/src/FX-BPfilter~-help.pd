@@ -1,0 +1,56 @@
+#N canvas 89 93 569 578 12;
+#X obj 2 3 cnv 15 301 42 empty empty FX-BPfilter~ 20 20 2 37 -233017
+-1 0;
+#X obj 305 4 cnv 15 250 40 empty empty RobBowland 135 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 302 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 252 42 2 100 100;
+#X restore 304 3 pd;
+#X obj 22 40 cnv 4 4 4 empty empty Band-Pass_Audio_Filter 0 28 2 18
+-233017 -1 0;
+#X obj 2 551 cnv 15 552 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 512 cnv 3 550 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 398 cnv 3 550 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 471 cnv 3 550 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X obj 85 408 cnv 17 3 25 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 479 cnv 17 3 17 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X text 95 516 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X text 115 479 signal -;
+#X text 392 216 when off[ ] the outgoing signal is blocked, f 19;
+#X text 371 200 <- toggle on[X]/off[ ];
+#X text 152 221 ->;
+#X obj 170 170 osc~ 250;
+#X text 36 337 signal amplitude ->;
+#X text 265 323 see how the signal amplitude changes as frequencies
+beyond the cut-off are attenuated, f 38;
+#X text 115 408 signal -;
+#X text 180 408 the audio signal that the filtering will be applied
+to, f 53;
+#X text 181 480 the filtered audio signal, f 52;
+#X obj 170 323 output~;
+#X obj 170 197 FX-BPfilter~;
+#X text 29 82 The [FX-BPfilter~] provides an interface for applying
+a BAND-PASS filter to an incoming audio signal., f 77;
+#X text 29 113 It provides sliders to control the CENTRE-FREQUENCY
+and Q-FACTOR of the filter to control the frequency band will be passed
+\, with frequencies outside this band being attentuated., f 77;
+#X text 59 221 select centre frequency, f 15;
+#X text 152 255 ->;
+#X text 50 255 select Q factor;
+#X obj 85 439 cnv 17 3 17 empty empty 1 5 9 0 16 -228856 -162280 0
+;
+#X text 128 439 bang -;
+#X text 180 439 external reset trigger, f 53;
+#X connect 16 0 23 0;
+#X connect 23 0 22 0;
+#X connect 23 0 22 1;

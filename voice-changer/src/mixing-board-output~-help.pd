@@ -1,0 +1,148 @@
+#N canvas 18 25 818 843 12;
+#X obj 2 3 cnv 15 370 42 empty empty mixing-board-output~ 20 20 2 37
+-233017 -1 0;
+#X obj 363 4 cnv 15 450 40 empty empty RobBowland 320 25 0 18 -128992
+-233080 0;
+#N canvas 0 25 450 278 (subpatch) 0;
+#X coords 0 1 100 -1 360 42 1 0 0;
+#X restore 2 3 graph;
+#N canvas 382 141 749 319 (subpatch) 0;
+#X coords 0 -1 1 1 452 42 2 100 100;
+#X restore 362 3 pd;
+#X obj 22 36 cnv 4 4 4 empty empty Mixing_Board_Output_Extension 0
+28 2 18 -233017 -1 0;
+#X obj 2 800 cnv 15 810 21 empty \$0-pddp.cnv.footer empty 20 12 0
+14 -228856 -66577 0;
+#X obj 2 757 cnv 3 810 3 empty \$0-pddp.cnv.more_info note 8 12 0 13
+-228856 -1 0;
+#X obj 2 568 cnv 3 810 3 empty \$0-pddp.cnv.inlets inlets 8 12 0 13
+-228856 -1 0;
+#X obj 2 694 cnv 3 810 3 empty \$0-pddp.cnv.outlets outlets 8 12 0
+13 -228856 -1 0;
+#X text 95 763 Formatting for this -help file was adapted from those
+seen in the EL Locus Solus' ELSE library., f 65;
+#X obj 132 188 mixing-board-output~;
+#X text 146 139 INPUT 0;
+#X text 219 139 INPUT 1;
+#X text 297 140 INPUT 2;
+#X text 377 139 INPUT 3;
+#X text 456 139 INPUT 4;
+#X text 535 140 INPUT 5;
+#X obj 132 155 sig~ 1000;
+#X obj 211 155 sig~ 750;
+#X obj 290 156 sig~ 500;
+#X obj 370 155 sig~ 350;
+#X obj 449 155 sig~ 250;
+#X obj 528 156 sig~ 150;
+#X obj 132 285 snapshot~;
+#X floatatom 132 334 5 0 0 0 - - -;
+#X obj 200 305 snapshot~;
+#X floatatom 200 334 5 0 0 0 - - -;
+#X obj 268 287 snapshot~;
+#X floatatom 268 335 5 0 0 0 - - -;
+#X obj 336 306 snapshot~;
+#X floatatom 336 335 5 0 0 0 - - -;
+#X obj 404 288 snapshot~;
+#X floatatom 404 335 5 0 0 0 - - -;
+#X obj 472 306 snapshot~;
+#X obj 540 286 snapshot~;
+#X obj 608 307 snapshot~;
+#X floatatom 472 335 5 0 0 0 - - -;
+#X floatatom 540 335 5 0 0 0 - - -;
+#X floatatom 608 335 5 0 0 0 - - -;
+#X text 20 189 toggle signals ---------v;
+#X text 38 202 ON..[X]OFF.[ ], f 7;
+#X obj 620 262 metro 1000;
+#X text 25 335 SIGNAL OUTPUTS;
+#X text 18 240 signal amplitude -->;
+#X text 28 75 The [mixing-board-output~] abstraction is an extension
+module for the [mixing-board~] abstraction \, forming the [mixing-board-ex~]
+abstraction. Its primary purpose it to provide a mechanism by which
+FEEDBACK signals can be correctly routed after mixing has occured \,
+regardless of the selected mixing order on the [mixing-board-ex~].
+, f 111;
+#X text 28 458 This is a bit complex/confusing to explain but it's
+not all that complicated. An alternative formulaic description is given
+below:, f 114;
+#X text 49 495 IF [SOME PATCH] OUTLET connected to [MIXING BOARD PATCH
+PANEL] INLET number (N) \; THEN connect [THIS PATCH] OUTLET number
+(N) to [SOME PATCH] FEEDBACK_INLET, f 108;
+#X text 28 376 One outlet exists for every signal inlet that is seen
+on the [mixing-board-ex~] patch panel. For this to work as a FEEDBACK
+panel \, the system providing an audio signal to an inlet on in the
+[mixing-board-ex~] patch patch panel must also have its FEEDBACK inlet
+connected to the corresponding outlet from this patch. i.e. if it provides
+audio signal to patch panel inlet 1 \, it must be connected to the
+first of these outlets. This ensures that inlets and outlets can be
+sychronised and that the correct FEEDBACK signal is being provided
+to the correct place for the current mixing board configuation., f
+117;
+#X obj 85 578 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 603 cnv 17 3 17 empty empty 5 5 9 0 16 -228856 -162280 0
+;
+#X text 114 578 signal -;
+#X obj 85 703 cnv 17 3 40 empty empty 0 5 9 0 16 -228856 -162280 0
+;
+#X obj 85 728 cnv 17 3 17 empty empty 7 5 9 0 16 -228856 -162280 0
+;
+#X text 114 702 signal -;
+#X obj 85 626 cnv 17 3 55 empty empty 6 5 9 0 16 -228856 -162280 0
+;
+#X text 183 578 input signals that will be controlled by the each of
+the 5 sliders \, each of these input signals is controlled by the slider
+'below' it (intended to be the outputs of the mixers as with the [mixing-board-ex~]
+abstraction), f 88;
+#X text 128 626 list -;
+#X text 121 639 (float);
+#X msg 656 181 9 0 1 2 3 4 5;
+#X text 183 626 list of 7 floats each one (except the first) an integer
+between 0-7 inclusive \, representing which of the 8 outlets the corresponding
+inlet signal will be routed to i.e. list item 1 determines where INPUT
+0 will be routed etc \, the first list item is ignored to allow for
+'silent' activations of pack, f 88;
+#X text 652 163 routing example 1;
+#X text 652 208 routing example 2;
+#X text 609 135 CLICK TO SEE ROUTING EXAMPLES;
+#X msg 656 225 9 7 6 5 4 3 2;
+#X text 630 146 (toggle all to ON first);
+#X text 185 702 output signals where the signal that is output to each
+outlet is dictated by the routing provided by inlet 6 (intended to
+be connected to the FEEDBACK inlets for FX- modules \, e.g. those provided
+on the [FX-board~] abstraction), f 88;
+#X text 27 528 Note that the [FX-boad~] abstraction is the intended
+recipient \, it provides specific inlets for this., f 112;
+#X connect 10 0 23 0;
+#X connect 10 1 25 0;
+#X connect 10 2 27 0;
+#X connect 10 3 29 0;
+#X connect 10 4 31 0;
+#X connect 10 5 33 0;
+#X connect 10 6 34 0;
+#X connect 10 7 35 0;
+#X connect 17 0 10 0;
+#X connect 18 0 10 1;
+#X connect 19 0 10 2;
+#X connect 20 0 10 3;
+#X connect 21 0 10 4;
+#X connect 22 0 10 5;
+#X connect 23 0 24 0;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 29 0 30 0;
+#X connect 31 0 32 0;
+#X connect 33 0 36 0;
+#X connect 34 0 37 0;
+#X connect 35 0 38 0;
+#X connect 41 0 35 0;
+#X connect 41 0 34 0;
+#X connect 41 0 33 0;
+#X connect 41 0 31 0;
+#X connect 41 0 29 0;
+#X connect 41 0 27 0;
+#X connect 41 0 25 0;
+#X connect 41 0 23 0;
+#X connect 58 0 10 6;
+#X connect 58 0 41 0;
+#X connect 63 0 10 6;
+#X connect 63 0 41 0;
