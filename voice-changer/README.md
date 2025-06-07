@@ -1,8 +1,5 @@
 # Real-Time Voice Changer
 
-> ℹ️ *The code for this was originally written in 2020 during my time studying Computer Science at the [University of Sheffield](https://www.sheffield.ac.uk/).
-> Most non-code related items have been removed, as has the commit history, for public display.
-
 This assignment involved the creation of a real-time voice changing application using the `PureData (Pd)` programming language. A full GUI was created, incorporating several signal processing techniques to produce various effects that can be applied to an audio signal.
 
 ![VoiceChanger](./img/ui.png)
@@ -51,10 +48,3 @@ The application comes complete with full documentation within `PureData`, to get
 | ***Me***        | ***87.00%***       |
 | *Class Average* | ***57.21%*** |
 | *Class Median*  | ***63.00%***    |
-
-### ⚠️ Academic Integrity Notice
->
-> *This repository contains code for assignments completed during my studies at the [University of Sheffield](https://www.sheffield.ac.uk/).*
-> *It is shared for educational reference & archival purposes only.*
->
-> *Any unauthorized use, including submission for academic credit, either as-is or in a modified form, is strictly prohibited.*
