@@ -7,14 +7,6 @@
 <h4 align="center"><a href="https://www.robbow.land" target="_blank">My</a> assignment code from the <i>COM3502: Speech Processing</i> module (from c. 2020), redacted for public display.</h4>
 <p align="center"><i>Taught by: <strong>Prof. Roger Moore</strong> & <strong>Dr. Stefan Goetze</strong></i></p>
 <hr>
-<p align="center">
-  <a href="#realtime-voice-changer">voice-changer</a>
-</p>
-
-### Realtime Voice Changer
-> [code →](https://github.com/robbowland/speech-processing/tree/main/voice-changer)
-
-Using [Pure Data](https://puredata.info/) to perform signal proccesing and produce a reatime voice changer. 
 
 <br>
 <hr>
